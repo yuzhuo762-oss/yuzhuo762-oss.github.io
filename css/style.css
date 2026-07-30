@@ -838,3 +838,5 @@ body .works-grid .work-card {
 .hero-name span{text-align:center;width:100%}
 .hero-name{display:flex;flex-direction:column;align-items:center;width:100%;margin-left:0 !important}
 .hero-tagline{border-radius:144px !important}.btn-primary{box-shadow:0 0 30px rgba(0,212,255,0.3) !important;border:1px solid rgba(0,212,255,0.3) !important}.btn-outline{border:1.5px solid rgba(255,255,255,0.3) !important;color:#fff !important}
+.project-gallery-full .gallery-item{aspect-ratio:auto;max-height:none;overflow:visible}
+.project-gallery-full .gallery-item img{height:auto;max-height:none;object-fit:contain;object-position:center;display:block}
