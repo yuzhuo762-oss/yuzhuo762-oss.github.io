@@ -22,7 +22,7 @@
   --mw: 1200px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;font-size:16px;}
+html{scroll-behavior:auto;font-size:16px;}
 body{font-family:var(--font-cn);background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;height:auto;display:block}
@@ -248,6 +248,8 @@ ul{list-style:none}
     linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
   background-size: 40px 40px;
   animation: introGridPulse 3s ease-in-out infinite;
+  mask-image: radial-gradient(ellipse at center, black 25%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 25%, transparent 75%);
 }
 @keyframes introGridPulse {
   0%, 100% { opacity: 0.5; }
@@ -907,3 +909,65 @@ img{
 @supports (grid-template-columns:repeat(4,round(down,1px,1px))) {
   .poster-row{grid-template-columns:repeat(4,round(down,calc((100% - 1.5rem)/4),1px))}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== Text Mask Reveal ===== */
+
+
+
+
+/* ===== Ambient Background Layers ===== */
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  pointer-events:none;
+  background:
+    radial-gradient(ellipse 70% 45% at 18% 12%, rgba(124,58,237,0.10), transparent 60%),
+    radial-gradient(ellipse 55% 40% at 82% 28%, rgba(0,212,255,0.07), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 55% 88%, rgba(124,58,237,0.06), transparent 65%);
+}
+body::after{
+  content:'';
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+  background-size:72px 72px;
+  mask-image:radial-gradient(ellipse at center, black 0%, transparent 78%);
+  -webkit-mask-image:radial-gradient(ellipse at center, black 0%, transparent 78%);
+}
+.section{background:transparent}
+.section-morph{background:linear-gradient(to bottom, rgba(8,8,15,0) 0%, rgba(14,14,26,0.55) 50%, rgba(8,8,15,0) 100%)}
+
+
+/* ===== Email Chooser ===== */
+.email-chooser{position:fixed;inset:0;z-index:99990;display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;pointer-events:none;transition:opacity 0.3s}
+.email-chooser.open{opacity:1;pointer-events:auto}
+.email-chooser-backdrop{position:absolute;inset:0;background:rgba(5,5,12,0.82);backdrop-filter:blur(6px)}
+.email-chooser-panel{position:relative;width:min(520px,100%);background:var(--bg-card,#12121f);border:1px solid rgba(139,92,246,0.25);border-radius:12px;padding:2rem 1.8rem 1.8rem;box-shadow:0 24px 80px rgba(0,0,0,0.6),0 0 40px rgba(124,58,237,0.12);transform:translateY(14px) scale(0.98);transition:transform 0.3s cubic-bezier(0.16,1,0.3,1)}
+.email-chooser.open .email-chooser-panel{transform:none}
+.email-chooser-close{position:absolute;top:0.8rem;right:0.8rem;width:34px;height:34px;border:none;border-radius:50%;background:rgba(255,255,255,0.06);color:var(--text,#f0f0f5);font-size:1.3rem;cursor:pointer;line-height:1}
+.email-chooser-close:hover{background:rgba(255,255,255,0.14)}
+.email-chooser-panel h3{font-size:1.25rem;font-weight:700;margin-bottom:0.4rem}
+.email-chooser-sub{color:var(--text2,#8888a0);font-size:0.9rem;margin-bottom:1.4rem}
+.email-chooser-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:0.8rem}
+.email-option{display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.08);border-radius:10px;background:rgba(255,255,255,0.03);color:var(--text,#f0f0f5);transition:all 0.25s}
+.email-option:hover{border-color:rgba(34,211,238,0.4);background:rgba(34,211,238,0.06);transform:translateY(-2px)}
+.email-option-icon{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:8px;font-size:0.8rem;font-weight:700;background:linear-gradient(135deg,#22d3ee,#8b5cf6);color:#fff;flex-shrink:0}
+.email-option-name{font-size:0.88rem;font-weight:600}

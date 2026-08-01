@@ -1,67 +1,33 @@
-﻿// 卓奕荣 · 作品集网站 · JS
-document.addEventListener("DOMContentLoaded",()=>{
-  initIntro()
-  initReveal()
-  initMorph()
-  injectAtmosphere()
-  initNav()
-  initLightbox()
-  initFilter()
-  initCursor()
-  initVignette()
-  initRipple()
-  initProgress()
-  initOrbs()
-  initMagnetic()
-  initHero3D()
-  initParallax()
-  initStagger()
-  initBreathing()
-})
+// 卓奕荣 · 作品集网站 · JS
 
-/* ===== INTRO ===== */
 
-function initCardFocus(){
-  document.querySelectorAll(".works-grid").forEach(grid=>{
-    grid.querySelectorAll(".work-card").forEach(card=>{
-      card.addEventListener("mouseenter",()=>{
-        grid.classList.add("focus-active");
-        card.classList.add("focus-card");
-      });
-      card.addEventListener("mouseleave",()=>{
-        grid.classList.remove("focus-active");
-        card.classList.remove("focus-card");
-      });
-    });
-  });
-}
+
+
+
+
+
+/* ===== TEXT MASK REVEAL (safe) ===== */
+
 
 function initIntro(){
-  const intro=document.querySelector(".site-intro")
-  if(!intro)return
-  const content=intro.querySelector(".intro-content")
-  const ringWrap=intro.querySelector(".intro-ring-wrap")
-  const bar=intro.querySelector(".intro-bar-wrap")
-  const fill=intro.querySelector(".intro-bar-fill")
-
-  // Phase 1: Show content + ring
-  setTimeout(()=>{content.classList.add("show")},150)
-  setTimeout(()=>{ringWrap.classList.add("show")},400)
-
-  // Phase 2: Loading bar fills
-  setTimeout(()=>{bar.classList.add("show")},1000)
-  let p=0
-  const bi=setInterval(()=>{p+=Math.random()*8+3;if(p>=100){p=100;clearInterval(bi)};fill.style.width=p+"%"},80)
-
-  // Phase 3: Glitch effect on content
+  const intro=document.querySelector(".site-intro");
+  if(!intro)return;
+  const content=intro.querySelector(".intro-content");
+  const ringWrap=intro.querySelector(".intro-ring-wrap");
+  const bar=intro.querySelector(".intro-bar-wrap");
+  const fill=intro.querySelector(".intro-bar-fill");
+  setTimeout(()=>{content.classList.add("show")},150);
+  setTimeout(()=>{ringWrap.classList.add("show")},400);
+  setTimeout(()=>{bar.classList.add("show")},1000);
+  let p=0;
+  const bi=setInterval(()=>{p+=Math.random()*8+3;if(p>=100){p=100;clearInterval(bi)};fill.style.width=p+"%"},80);
   setTimeout(()=>{
-    content.classList.add("intro-glitch")
-    // After glitch, fade out
+    content.classList.add("intro-glitch");
     setTimeout(()=>{
-      intro.classList.add("exit")
-      setTimeout(()=>{intro.style.display="none"},600)
-          },500)
-  },1600)
+      intro.classList.add("exit");
+      setTimeout(()=>{intro.style.display="none"},600);
+    },500);
+  },1600);
 }
 
 /* ===== ATMOSPHERE ===== */
@@ -202,4 +168,65 @@ function initMagnetic(){
 
 /* ===== NAVIGATION ===== */
 function navigateTo(url){const o=document.querySelector(".page-transition");if(o){o.classList.add("active");setTimeout(()=>{location.href=url},500)}else{location.href=url}}
+
+
+
+
+
+
+
+
+/* ===== EMAIL CHOOSER ===== */
+function initEmailChooser(){
+  const chooser=document.getElementById("emailChooser");
+  if(!chooser)return;
+  const closeBtn=chooser.querySelector(".email-chooser-close");
+  const backdrop=chooser.querySelector(".email-chooser-backdrop");
+  const open=()=>chooser.classList.add("open");
+  const close=()=>chooser.classList.remove("open");
+  document.querySelectorAll(".email-trigger").forEach(btn=>{
+    btn.addEventListener("click",e=>{e.preventDefault();open()});
+  });
+  if(closeBtn)closeBtn.addEventListener("click",close);
+  if(backdrop)backdrop.addEventListener("click",close);
+  document.addEventListener("keydown",e=>{if(e.key==="Escape")close()});
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+  initIntro()
+  initEmailChooser()
+  initReveal()
+  initMorph()
+  injectAtmosphere()
+  initNav()
+  initLightbox()
+  initFilter()
+  initCursor()
+  initVignette()
+  initRipple()
+  initProgress()
+  initOrbs()
+  initMagnetic()
+  initHero3D()
+  initParallax()
+  initStagger()
+  initBreathing()
+});
+
+/* ===== EMAIL CHOOSER ===== */
+function initEmailChooser(){
+  const chooser=document.getElementById("emailChooser");
+  if(!chooser)return;
+  const closeBtn=chooser.querySelector(".email-chooser-close");
+  const backdrop=chooser.querySelector(".email-chooser-backdrop");
+  const open=()=>chooser.classList.add("open");
+  const close=()=>chooser.classList.remove("open");
+  document.querySelectorAll(".email-trigger").forEach(btn=>{
+    btn.addEventListener("click",e=>{e.preventDefault();open()});
+  });
+  if(closeBtn)closeBtn.addEventListener("click",close);
+  if(backdrop)backdrop.addEventListener("click",close);
+  document.addEventListener("keydown",e=>{if(e.key==="Escape")close()});
+}
+
 document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll('a[href^="/"],a[href^="./"]').forEach(a=>{if(!a.hasAttribute("target")&&a.hostname===location.hostname){const h=a.getAttribute("href");if(h&&!h.startsWith("#")&&!h.startsWith("http")){a.addEventListener("click",e=>{if(!e.metaKey&&!e.ctrlKey){e.preventDefault();navigateTo(h)}})}}})})
