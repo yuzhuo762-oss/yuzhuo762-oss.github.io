@@ -971,3 +971,6 @@ body::after{
 .email-option:hover{border-color:rgba(34,211,238,0.4);background:rgba(34,211,238,0.06);transform:translateY(-2px)}
 .email-option-icon{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:8px;font-size:0.8rem;font-weight:700;background:linear-gradient(135deg,#22d3ee,#8b5cf6);color:#fff;flex-shrink:0}
 .email-option-name{font-size:0.88rem;font-weight:600}
+
+.skills-sub{font-size:0.85rem;font-weight:600;color:var(--text2,#8888a0);margin:1.2rem 0 0.6rem;letter-spacing:0.08em;text-transform:uppercase}
+.skills-sub:first-of-type{margin-top:0.4rem}
