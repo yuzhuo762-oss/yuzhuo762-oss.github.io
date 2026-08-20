@@ -223,6 +223,7 @@ ul{list-style:none}
    开场动画 · 赛博科技增强
    =========================== */
 /* --- Intro Overlay --- */
+html,body{background:#080a09;color:var(--text);}
 .site-intro {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -1048,6 +1049,7 @@ body::before{background:none!important}
 .filter-btn{background:rgba(8,10,9,.72)!important;color:var(--text2,#b7bbb4)!important;border:1px solid rgba(245,246,241,.16)!important;box-shadow:none!important}
 .filter-btn:hover{color:var(--text,#f5f6f1)!important;border-color:rgba(184,255,0,.55)!important;background:rgba(184,255,0,.06)!important}
 .filter-btn.active{background:var(--signal,#b8ff00)!important;color:#080a09!important;border-color:var(--signal,#b8ff00)!important;box-shadow:0 0 24px rgba(184,255,0,.18)!important}
+.filter-group .filter-btn{font-family:var(--font-mono)!important;border-radius:999px!important}
 
 /* Bring inner-page headings closer to the shared navigation bar. */
 .project-hero{min-height:40vh!important;padding-top:5rem!important;padding-bottom:3rem!important}
