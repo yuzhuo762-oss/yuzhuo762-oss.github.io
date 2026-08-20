@@ -1,0 +1,6 @@
+/* Navigation synchronized with homepage */
+.navbar{background:rgba(8,10,9,.9)!important;border-bottom:1px solid rgba(245,246,241,.15)!important;backdrop-filter:blur(12px)!important}
+.nav-inner{max-width:none!important;padding-left:9vw!important;padding-right:9vw!important}
+.nav-logo,.nav-links a{font-size:.875rem!important}
+.nav-logo{margin-left:-82px!important}.nav-links{margin-right:-82px!important}
+@media(max-width:767px){.nav-inner{padding-left:1rem!important;padding-right:1rem!important}.nav-logo{margin-left:0!important}.nav-links{margin-right:0!important}}

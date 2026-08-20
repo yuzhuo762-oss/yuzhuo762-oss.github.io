@@ -4,8 +4,6 @@
 (function() {
   "use strict";
 
-  if (typeof THREE === "undefined") return;
-
   const canvas = document.getElementById("three-canvas");
   if (!canvas) return;
 

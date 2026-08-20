@@ -1,0 +1,139 @@
+/* ===========================
+   Light gallery theme
+   Loaded after style.css; overrides tokens and light-specific surfaces.
+   =========================== */
+:root {
+  --ink: #F4F6F8;
+  --ink-2: #FFFFFF;
+  --ink-3: #E9EDF2;
+  --bg: #F4F6F8;
+  --bg2: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-nav: rgba(255, 255, 255, 0.88);
+  --line: rgba(20, 23, 28, 0.11);
+  --text: #15181D;
+  --text2: #5C6672;
+  --text3: #8A93A1;
+  --signal: #0B9CCB;
+  --grad: linear-gradient(135deg, #0B9CCB 0%, #6B5AE0 100%);
+  --accent: #0B9CCB;
+  --accent-gradient: linear-gradient(135deg, #0B9CCB 0%, #6B5AE0 100%);
+  --cyan: #0B9CCB;
+  --purple: #6B5AE0;
+  --border: rgba(20, 23, 28, 0.11);
+}
+
+body.theme-light { color-scheme: light; }
+
+body.theme-light::before {
+  background:
+    radial-gradient(ellipse 52% 42% at 84% 8%, rgba(11, 156, 203, 0.10), transparent 62%),
+    radial-gradient(ellipse 48% 44% at 12% 88%, rgba(107, 90, 224, 0.08), transparent 64%);
+}
+body.theme-light::after {
+  background-image: linear-gradient(rgba(20, 23, 28, 0.018) 1px, transparent 1px);
+}
+
+body.theme-light ::selection { background: rgba(11, 156, 203, 0.18); color: #10202A; }
+body.theme-light ::-webkit-scrollbar-track { background: var(--ink); }
+body.theme-light ::-webkit-scrollbar-thumb { background: #C3CBD5; }
+
+body.theme-light .btn-primary {
+  color: #FFFFFF;
+  box-shadow: 0 10px 28px rgba(11, 156, 203, 0.18);
+}
+body.theme-light .btn-outline {
+  border-color: rgba(20, 23, 28, 0.28);
+}
+body.theme-light .btn-outline:hover {
+  border-color: var(--signal);
+  color: var(--signal);
+}
+
+body.theme-light .navbar.scrolled {
+  background: var(--bg-nav);
+  border-bottom-color: var(--line);
+}
+body.theme-light .nav-links a:hover { color: var(--text); }
+
+body.theme-light .hero-sheet-item,
+body.theme-light .featured-media,
+body.theme-light .work-card {
+  border-color: rgba(20, 23, 28, 0.12);
+}
+body.theme-light .hero-sheet-item { background: #F9FBFC; }
+body.theme-light .hero-frame-caption { color: var(--text3); }
+body.theme-light .work-card {
+  box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset, 0 10px 30px rgba(20, 23, 28, 0.05);
+}
+body.theme-light .work-card:hover {
+  border-color: rgba(11, 156, 203, 0.45);
+  box-shadow: 0 20px 44px rgba(20, 23, 28, 0.10);
+}
+body.theme-light .featured-row:hover {
+  background: linear-gradient(90deg, rgba(11,156,203,0.05), transparent 55%);
+}
+
+body.theme-light .hero + .section-morph {
+  background: linear-gradient(to bottom, var(--ink), var(--ink-2) 45%, var(--ink));
+}
+body.theme-light .home-close {
+  background: linear-gradient(to bottom, var(--ink), var(--ink-2) 55%, var(--ink));
+}
+body.theme-light .timeline-item,
+body.theme-light .contact-info .contact-item,
+body.theme-light .featured-row,
+body.theme-light .featured-row:last-child {
+  border-color: var(--line);
+}
+body.theme-light .contact-info .contact-icon {
+  background: #EEF6FA;
+  border-color: rgba(11, 156, 203, 0.2);
+}
+body.theme-light .skill-tag {
+  background: var(--ink-3);
+}
+body.theme-light .email-chooser-panel {
+  box-shadow: 0 24px 80px rgba(20, 23, 28, 0.22);
+}
+body.theme-light .email-chooser-backdrop {
+  background: rgba(244, 246, 248, 0.86);
+}
+body.theme-light .email-option {
+  background: #F9FBFC;
+}
+body.theme-light .lightbox {
+  background: rgba(244, 246, 248, 0.94);
+}
+body.theme-light .lightbox .close {
+  background: var(--ink-3);
+  color: var(--text);
+}
+body.theme-light .page-transition {
+  background: var(--ink);
+}
+body.theme-light .site-intro {
+  background: var(--ink);
+}
+body.theme-light .intro-bar-wrap {
+  background: rgba(20, 23, 28, 0.08);
+}
+
+body.theme-light .cursor-ring {
+  border-color: rgba(11, 156, 203, 0.5);
+}
+
+@media (prefers-color-scheme: dark) {
+  body.theme-light { color-scheme: light; }
+}
+/* New hero + accordion in light theme */
+body.theme-light .hero-frame {
+  border-color: rgba(20, 23, 28, 0.12);
+  box-shadow: 0 24px 60px rgba(20, 23, 28, 0.12);
+}
+body.theme-light .hero-frame-caption { color: var(--text3); }
+body.theme-light .acc-head:hover { background: rgba(20, 23, 28, 0.03); }
+body.theme-light .acc-media {
+  background: #F9FBFC;
+  border-color: rgba(20, 23, 28, 0.12);
+}
