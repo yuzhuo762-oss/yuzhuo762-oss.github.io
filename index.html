@@ -6,7 +6,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./css/style.css?v=20260801">
+<link rel="stylesheet" href="./css/style.css?v=20260801"><link rel="stylesheet" href="./css/home-reference.css?v=20260822-aigc-spacing">
 <noscript><style>.reveal,.stagger-children>*,.grow-in,.diagonal-reveal img{opacity:1!important;transform:none!important;clip-path:polygon(0 0,100% 0,100% 100%,0 100%)!important}</style></noscript>
 
 </head><body>
@@ -38,12 +38,25 @@
 
 <div class="hero-actions"><a href="./works.html" class="btn btn-primary">浏览作品 →</a><a href="./about.html" class="btn btn-outline">关于我</a></div>
 </div>
+<div class="hero-visual hero-carousel reveal" aria-label="作品分类轮播">
+  <div class="hero-carousel-track">
+    <a class="hero-slide is-active" href="./works.html?filter=AIGC"><img src="./assets/images/carousel/aigc.png" alt="AIGC"><span class="hero-slide-meta"><b>01</b><span class="hero-slide-label">AIGC</span></span></a>
+    <a class="hero-slide" href="./works.html?filter=品牌"><img src="./assets/images/carousel/brand.png" alt="品牌设计"><span class="hero-slide-meta"><b>02</b><span class="hero-slide-label">品牌设计</span></span></a>
+    <a class="hero-slide" href="./works.html?filter=IP"><img src="./assets/images/carousel/ip.png" alt="IP设计"><span class="hero-slide-meta"><b>03</b><span class="hero-slide-label">IP设计</span></span></a>
+    <a class="hero-slide" href="./works.html?filter=海报"><img src="./assets/images/carousel/poster.png" alt="海报设计"><span class="hero-slide-meta"><b>04</b><span class="hero-slide-label">海报设计</span></span></a>
+    <a class="hero-slide" href="./works.html?filter=UI"><img src="./assets/images/carousel/ui.png" alt="UI设计"><span class="hero-slide-meta"><b>05</b><span class="hero-slide-label">UI设计</span></span></a>
+    <a class="hero-slide" href="./works.html?filter=建筑"><img src="./assets/images/carousel/architecture.png" alt="建筑设计"><span class="hero-slide-meta"><b>06</b><span class="hero-slide-label">建筑设计</span></span></a>
+  </div>
+  <button class="hero-carousel-btn hero-carousel-prev" type="button" aria-label="上一组">←</button>
+  <button class="hero-carousel-btn hero-carousel-next" type="button" aria-label="下一组">→</button>
+  <div class="hero-carousel-dots" aria-label="选择作品分类"></div>
+</div>
 <div class="hero-scroll"><span>SCROLL</span><div class="scroll-line"></div></div>
 </section>
 <section class="section section-morph"><div class="section-inner">
 <div class="section-header"><span class="label">PORTFOLIO</span><h2>精选作品</h2><p>AI 驱动 · 视觉设计 · 品牌传播</p></div>
 <div class="featured-projects stagger-children">
-<a href="./works/ai-ip-video.html" class="featured-row">
+<a href="./works/ai-ip-video.html" class="featured-row reveal">
   <div class="featured-media diagonal-reveal"><img src="./assets/images/preview/proj01-1.webp" data-full="./assets/images/proj01-1.jpg"jpg alt="AI驱动企业IP内容生产设计" loading="lazy"></div>
   <div class="featured-info">
     <span class="featured-index">01</span>
@@ -53,7 +66,7 @@
     <span class="arrow">查看详情 →</span>
   </div>
 </a>
-<a href="./works/ai-film-scene.html" class="featured-row reverse">
+<a href="./works/ai-film-scene.html" class="featured-row reverse reveal">
   <div class="featured-media diagonal-reveal"><img src="./assets/images/preview/proj02-1.webp" data-full="./assets/images/proj02-1.jpg"jpg alt="AI影视概念设计实验" loading="lazy"></div>
   <div class="featured-info">
     <span class="featured-index">02</span>
@@ -63,7 +76,7 @@
     <span class="arrow">查看详情 →</span>
   </div>
 </a>
-<a href="./works/ip-design.html" class="featured-row">
+<a href="./works/ip-design.html" class="featured-row reveal">
   <div class="featured-media diagonal-reveal"><img src="./assets/images/preview/proj03-1.webp" data-full="./assets/images/proj03-1.jpg"jpg alt="IP全链路设计 — 狮小昂" loading="lazy"></div>
   <div class="featured-info">
     <span class="featured-index">03</span>
@@ -77,6 +90,20 @@
 <div style="text-align:center;margin-top:2.5rem" class="reveal"><a href="./works.html" class="btn btn-outline">查看全部 10 个项目 →</a></div>
 </div></section><footer class="footer"><p>&copy; 2026 卓 奕 荣 · 设计连接未来，创意驱动价值</p></footer><script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="./js/three-scene.js?v=2"></script>
-<script src="./js/main.js?v=6"></script>
+<script src="./js/main.js?v=8"></script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  const root=document.querySelector('.hero-carousel'); if(!root)return;
+  const track=root.querySelector('.hero-carousel-track'),base=[...root.querySelectorAll('.hero-slide')],dots=root.querySelector('.hero-carousel-dots');
+  const before=base.map(s=>s.cloneNode(true)),after=base.map(s=>s.cloneNode(true));
+  before.reverse().forEach(s=>track.insertBefore(s,track.firstChild)); after.forEach(s=>track.appendChild(s));
+  const slides=[...track.querySelectorAll('.hero-slide')]; let index=base.length, locked=false;
+  function paint(){const target=slides[index+2];if(!target)return;const center=root.clientWidth/2-(target.offsetLeft+target.offsetWidth/2);track.style.transform='translateX('+center+'px)';slides.forEach((s,i)=>s.classList.toggle('is-center',i===index+2));}
+  function go(next){if(locked)return;locked=true;index=next;paint();}
+  track.addEventListener('transitionend',function(){if(index>=base.length*2){track.style.transition='none';index-=base.length;paint();track.offsetHeight;track.style.transition=''}else if(index<base.length){track.style.transition='none';index+=base.length;paint();track.offsetHeight;track.style.transition=''}locked=false});
+  root.addEventListener('wheel',function(e){if(Math.abs(e.deltaY)>Math.abs(e.deltaX)){e.preventDefault();go(index+(e.deltaY>0?1:-1))}},{passive:false});
+  paint();
+});
+</script>
 </body>
 </html>
