@@ -212,6 +212,7 @@ document.addEventListener("DOMContentLoaded",()=>{
   document.querySelectorAll('a[href="./"]').forEach(a=>a.setAttribute('href','./index.html'))
   document.querySelectorAll('a[href="../"]').forEach(a=>a.setAttribute('href','../index.html'))
   document.querySelectorAll('img[data-full]').forEach(img=>img.dataset.full=img.dataset.full.replace(/(jpg|jpeg|png|webp)\1$/i,'$1'))
+  document.querySelectorAll('.works-grid img').forEach(img=>{img.loading='eager'})
   initIntro()
   initEmailChooser()
   initReveal()

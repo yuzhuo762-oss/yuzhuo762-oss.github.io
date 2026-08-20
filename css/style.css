@@ -1113,4 +1113,4 @@ body:has(.about-info) .about-info > div[style*="margin-top"] > *{opacity:1!impor
 .nav-logo{font-size:1.1rem!important;margin-left:0!important}
 .nav-links{margin-right:0!important}.nav-links a{font-size:.875rem!important}
 @media(max-width:767px){.navbar{padding:0 1rem!important}.nav-inner{padding:0!important}}
-.works-grid .work-card-image.diagonal-reveal img{clip-path:polygon(0 0,100% 0,100% 100%,0 100%) !important;opacity:1 !important}
+.works-grid .work-card-image img{clip-path:polygon(0 0,100% 0,100% 100%,0 100%) !important;opacity:1 !important}
