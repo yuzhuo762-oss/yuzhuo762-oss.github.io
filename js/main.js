@@ -164,7 +164,10 @@ function initFilter(){
   btns.forEach(btn=>{btn.addEventListener("click",()=>{
     const f=btn.dataset.filter
     btns.forEach(b=>b.classList.remove("active"));btn.classList.add("active")
-    if(grid)grid.innerHTML=f==="海报"?posterGrid:originalGrid
+    if(grid){
+      grid.innerHTML=f==="海报"?posterGrid:originalGrid
+      grid.querySelectorAll(".diagonal-reveal").forEach(el=>el.classList.add("revealed"))
+    }
     let matched=0;document.querySelectorAll(".work-card").forEach(c=>{if(f==="all"||c.dataset.category===f){c.style.display="";matched++}else{c.style.display="none"}})
     let empty=document.querySelector(".filter-empty");if(!empty){empty=document.createElement("p");empty.className="filter-empty";empty.style.cssText="grid-column:1/-1;text-align:center;color:var(--text2);padding:4rem 0";document.querySelector(".works-grid")?.appendChild(empty)}empty.textContent=matched?"":"该分类作品正在整理中"
   })});const requested=new URLSearchParams(location.search).get("filter");if(requested)applyFilter(requested)
