@@ -150,10 +150,21 @@ function initLightbox(){
 /* ===== FILTER ===== */
 function initFilter(){
   const btns=document.querySelectorAll(".filter-btn");if(!btns.length)return
+  const grid=document.querySelector(".works-grid")
+  const originalGrid=grid?.innerHTML||""
+  const posterGrid=`
+<a href="./works/poster-gongzhonghao.html" class="work-card" data-category="海报"><div class="work-card-image diagonal-reveal"><img src="./assets/images/preview/proj07-1.webp" alt="公众号首图" loading="lazy"></div><div class="work-card-body"><span class="tag">海报</span><h3>公众号首图</h3><p>企业微信公众号系列首图设计（6张）</p><span class="arrow">查看详情 →</span></div></a>
+<a href="./works/poster-seasons.html" class="work-card" data-category="海报"><div class="work-card-image diagonal-reveal"><img src="./assets/images/preview/season_thumb.webp" alt="节气系列" loading="lazy"></div><div class="work-card-body"><span class="tag">海报</span><h3>节气系列</h3><p>二十四节气传统文化视觉设计（8张）</p><span class="arrow">查看详情 →</span></div></a>
+<a href="./works/poster-qixi.html" class="work-card" data-category="海报"><div class="work-card-image diagonal-reveal"><img src="./assets/images/preview/qixi_01.webp" alt="七夕主视觉" loading="lazy"></div><div class="work-card-body"><span class="tag">海报</span><h3>七夕主视觉 &amp; 海报设计</h3><p>七夕节日KV及海报系列（10张）</p><span class="arrow">查看详情 →</span></div></a>
+<a href="./works/poster-summer.html" class="work-card" data-category="海报"><div class="work-card-image diagonal-reveal"><img src="./assets/images/preview/summer_02.webp" alt="清凉一夏" loading="lazy"></div><div class="work-card-body"><span class="tag">海报</span><h3>「清凉一夏」KV设计</h3><p>夏日主题视觉设计系列（6张）</p><span class="arrow">查看详情 →</span></div></a>
+<a href="./works/poster-art.html" class="work-card" data-category="海报"><div class="work-card-image diagonal-reveal"><img src="./assets/images/preview/art_thumb.webp" alt="插画设计" loading="lazy"></div><div class="work-card-body"><span class="tag">海报</span><h3>插画设计 — 穆夏风格</h3><p>穆夏风格新艺术运动插画（7张）</p><span class="arrow">查看详情 →</span></div></a>
+<a href="./works/poster-daily.html" class="work-card" data-category="海报"><div class="work-card-image diagonal-reveal"><img src="./assets/images/preview/daily_thumb.webp" alt="日常海报" loading="lazy"></div><div class="work-card-body"><span class="tag">海报</span><h3>日常海报 &amp; 活动传播</h3><p>节日海报、活动通知、展会物料（11张）</p><span class="arrow">查看详情 →</span></div></a>
+<a href="./works/poster-other.html" class="work-card" data-category="海报"><div class="work-card-image diagonal-reveal"><img src="./assets/images/preview/other_02.webp" alt="户外展会物料" loading="lazy"></div><div class="work-card-body"><span class="tag">海报</span><h3>户外 &amp; 展会物料</h3><p>户外广告、易拉宝、展位装饰（6张）</p><span class="arrow">查看详情 →</span></div></a>`
   function applyFilter(f){const target=[...btns].find(b=>b.dataset.filter===f)||[...btns].find(b=>b.dataset.filter==="all");if(target)target.click()}
   btns.forEach(btn=>{btn.addEventListener("click",()=>{
     const f=btn.dataset.filter
     btns.forEach(b=>b.classList.remove("active"));btn.classList.add("active")
+    if(grid)grid.innerHTML=f==="海报"?posterGrid:originalGrid
     let matched=0;document.querySelectorAll(".work-card").forEach(c=>{if(f==="all"||c.dataset.category===f){c.style.display="";matched++}else{c.style.display="none"}})
     let empty=document.querySelector(".filter-empty");if(!empty){empty=document.createElement("p");empty.className="filter-empty";empty.style.cssText="grid-column:1/-1;text-align:center;color:var(--text2);padding:4rem 0";document.querySelector(".works-grid")?.appendChild(empty)}empty.textContent=matched?"":"该分类作品正在整理中"
   })});const requested=new URLSearchParams(location.search).get("filter");if(requested)applyFilter(requested)
