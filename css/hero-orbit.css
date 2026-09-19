@@ -1,0 +1,61 @@
+/* One position calculation controls every card and its depth. */
+.home-page .hero {
+  display:block!important;
+  height:var(--orbit-stage-height,100svh)!important;
+  min-height:640px!important;
+  padding:0!important;
+  isolation:isolate;
+  overflow:hidden!important;
+}
+.home-page .hero-statement {
+  position:absolute!important;
+  left:50%!important;
+  top:50svh!important;
+  width:min(80%,960px)!important;
+  max-width:960px!important;
+  margin:0!important;
+  transform:translate(-50%,-50%)!important;
+  z-index:10!important;
+}
+.home-page .hero-name {font-size:clamp(2.5rem,5.2vw,4.7rem)!important;}
+.home-page .hero-statement .hero-name {line-height:1.15!important;}
+.home-page .hero-statement .hero-name span + span {margin-top:.12em;}
+.home-page .hero-orbit {position:absolute;inset:0;animation:none!important;transform:none!important;z-index:2!important;}
+.home-page .orbit-work {
+  left:0!important;top:0!important;right:auto!important;bottom:auto!important;
+  width:clamp(150px,17vw,260px)!important;
+  height:auto!important;aspect-ratio:16/9!important;
+  margin:0!important;offset-path:none!important;offset-distance:0!important;
+  animation:none!important;rotate:none!important;scale:none!important;
+  transform:translate(var(--card-x,0px),var(--card-y,0px)) translate(-50%,-50%) scale(var(--card-scale,1))!important;
+  opacity:var(--card-opacity,0)!important;
+  transition:border-color .2s,box-shadow .2s!important;
+  will-change:transform,opacity;
+}
+.home-page .orbit-work img {width:100%!important;height:100%!important;aspect-ratio:16/9!important;object-fit:cover!important;}
+.hero-type-line {position:relative;}
+.hero-type-line .hero-type-source {opacity:0;}
+.hero-typed {
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  pointer-events:none;
+}
+.hero-typed-text {position:relative;white-space:nowrap;}
+.hero-typed-text.is-typing::after {
+  content:'';
+  position:absolute;
+  left:calc(100% + .12em);
+  top:.08em;
+  width:1px;
+  height:1em;
+  background:currentColor;
+}
+@media(max-width:767px){
+  .home-page .hero{min-height:580px!important;}
+  .home-page .hero-statement{width:88%!important;}
+  .home-page .hero-name{font-size:clamp(1.8rem,8vw,3.2rem)!important;}
+  .home-page .orbit-work{width:34vw!important;}
+}

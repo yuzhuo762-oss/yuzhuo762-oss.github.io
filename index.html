@@ -1,4 +1,4 @@
-﻿﻿﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>卓 奕 荣 | AIGC 视觉设计作品集</title>
@@ -6,10 +6,20 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./css/style.css?v=20260822-final"><link rel="stylesheet" href="./css/home-reference.css?v=20260903-vibe-light">
+<link rel="stylesheet" href="./css/style.css?v=20260822-final"><link rel="stylesheet" href="./css/home-reference.css?v=20260918-orbit-cards">
 <noscript><style>.reveal,.stagger-children>*,.grow-in,.diagonal-reveal img{opacity:1!important;transform:none!important;clip-path:polygon(0 0,100% 0,100% 100%,0 100%)!important}</style></noscript>
+<link rel="stylesheet" href="./css/hero-orbit.css?v=20260919-typewriter">
+<link rel="stylesheet" href="./css/featured-projects.css?v=20260919-cover-loop">
 
-</head><body>
+</head><body class="home-page">
+<!--
+THESIS: Five real project stories turn the existing portfolio overview into a readable, hands-on gallery.
+OWN-WORLD: Inherit the black background, charcoal surfaces, warm white type and lime controls. No changes to the hero.
+STORY: See the work, understand the designer's contribution, then open the complete project.
+FIRST VIEWPORT: Below the unchanged hero, a left-aligned heading and right-hand arrows lead into two large image-first cards and a visible next-card edge.
+FORM: Continuous right-to-left gallery loop with pause, native swipe, mouse drag and keyboard navigation. Reduced motion uses manual navigation.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+-->
 <div class="page-transition"></div>
 <div class="site-intro">
   <div class="intro-grid"></div>
@@ -31,80 +41,104 @@
 </div><nav class="navbar"><div class="nav-inner"><a href="./" class="nav-logo">Z·Y·R</a><button class="nav-hamburger" aria-label="菜单"><span></span><span></span><span></span></button><div class="nav-links"><a href="./">首页</a><a href="./works.html">作品</a><a href="./about.html">关于我</a></div></div></nav><section class="hero">
 <canvas id="three-canvas"></canvas>
   <div class="hero-cyber-grid"></div>
-<div class="hero-content">
-<div class="hero-name"><span style="display:block;white-space:nowrap">AIGC VISUAL</span><span style="display:block;white-space:nowrap">DESIGN</span></div>
-<div class="hero-tagline">卓奕荣个人作品展示网站</div>
-<p class="hero-subtitle">设计连接未来</p>
-
-<div class="hero-actions"><a href="./works.html" class="btn btn-primary">浏览作品 →</a><a href="./about.html" class="btn btn-outline">关于我</a></div>
+<div class="hero-orbit" aria-label="精选作品">
+  <a class="orbit-work" href="./works/ai-ip-video.html"><img src="./assets/images/preview/proj01-1.webp" alt="AI驱动企业IP内容生成设计"></a>
+  <a class="orbit-work" href="./works/ai-film-scene.html"><img src="./assets/images/preview/proj02-1.webp" alt="AI影视概念设计"></a>
+  <a class="orbit-work" href="./works/ip-design.html"><img src="./assets/images/preview/proj03-1.webp" alt="IP全链路设计"></a>
+  <a class="orbit-work" href="./works/annual-conference.html"><img src="./assets/images/preview/proj05-1.webp" alt="企业年会主视觉设计"></a>
+  <a class="orbit-work" href="./works/pet-logo.html"><img src="./assets/images/preview/proj06-1.webp" alt="宠物LOGO设计"></a>
+  <a class="orbit-work" href="./works/anniversary-kv-design.html"><img src="./assets/images/preview/proj08-1.webp" alt="企业周年庆主视觉设计"></a>
+  <a class="orbit-work" href="./works/poster-qixi.html"><img src="./assets/images/preview/qixi_01.webp" alt="七夕主视觉与海报设计"></a>
+  <a class="orbit-work" href="./works/poster-summer.html"><img src="./assets/images/preview/summer_02.webp" alt="清凉一夏KV设计"></a>
+  <a class="orbit-work" href="./works/poster-art.html"><img src="./assets/images/preview/art_thumb.webp" alt="插画设计——穆夏风格"></a>
+  <a class="orbit-work" href="./works/poster-other.html"><img src="./assets/images/preview/other_02.webp" alt="户外与展会物料"></a>
+  <a class="orbit-work" href="./works/design-workbench.html"><img src="./assets/images/design-operations-workbench.png" alt="个人设计运营工作台"></a>
+  <a class="orbit-work" href="./works.html?filter=建筑"><img src="./assets/images/carousel/architecture.png" alt="建筑设计"></a>
 </div>
-<div class="hero-visual hero-carousel reveal" aria-label="作品分类轮播">
-  <div class="hero-carousel-track">
-    <a class="hero-slide is-active" href="./works.html?filter=AIGC"><img src="./assets/images/carousel/aigc.png" alt="AIGC"><span class="hero-slide-meta"><b>01</b><span class="hero-slide-label">AIGC</span></span></a>
-    <a class="hero-slide" href="./works.html?filter=品牌"><img src="./assets/images/carousel/brand.png" alt="品牌设计"><span class="hero-slide-meta"><b>02</b><span class="hero-slide-label">品牌设计</span></span></a>
-    <a class="hero-slide" href="./works.html?filter=IP"><img src="./assets/images/carousel/ip.png" alt="IP设计"><span class="hero-slide-meta"><b>03</b><span class="hero-slide-label">IP设计</span></span></a>
-    <a class="hero-slide" href="./works.html?filter=海报"><img src="./assets/images/carousel/poster.png" alt="海报设计"><span class="hero-slide-meta"><b>04</b><span class="hero-slide-label">海报设计</span></span></a>
-    <a class="hero-slide" href="./works.html?filter=UI"><img src="./assets/images/carousel/ui.png" alt="UI设计"><span class="hero-slide-meta"><b>05</b><span class="hero-slide-label">UI设计</span></span></a>
-    <a class="hero-slide" href="./works.html?filter=建筑"><img src="./assets/images/carousel/architecture.png" alt="建筑设计"><span class="hero-slide-meta"><b>06</b><span class="hero-slide-label">建筑设计</span></span></a>
-    <a class="hero-slide hero-slide-vibe" href="./works.html?filter=Vibe%20Coding" aria-label="Vibe Coding：AI 驱动的数字实验"><span class="vibe-orbit orbit-one"></span><span class="vibe-orbit orbit-two"></span><span class="vibe-window"><i></i><i></i><i></i><em></em><em></em><em></em></span><span class="hero-slide-meta"><b>07</b><span class="hero-slide-label">Vibe Coding</span></span></a>
-  </div>
-  <button class="hero-carousel-btn hero-carousel-prev" type="button" aria-label="上一组">←</button>
-  <button class="hero-carousel-btn hero-carousel-next" type="button" aria-label="下一组">→</button>
-  <div class="hero-carousel-dots" aria-label="选择作品分类"></div>
+<div class="hero-content hero-statement">
+<h1 class="hero-name"><span>AIGC VISUAL</span><span>DESIGN</span></h1>
+<p class="hero-tagline">卓奕荣个人作品展示网站</p>
+<p class="hero-subtitle">设计连接未来</p>
+<div class="hero-actions"><a href="./works.html" class="btn btn-primary">浏览作品 →</a><a href="./about.html" class="btn btn-outline">关于我</a></div>
 </div>
 <div class="hero-scroll"><span>SCROLL</span><div class="scroll-line"></div></div>
 </section>
-<section class="section section-morph"><div class="section-inner">
-<div class="section-header"><span class="label">PORTFOLIO</span><h2>精选作品</h2><p>AI 驱动 · 视觉设计 · 品牌传播</p></div>
-<div class="featured-projects stagger-children">
-<a href="./works/ai-ip-video.html" class="featured-row reveal">
-  <div class="featured-media diagonal-reveal"><img src="./assets/images/preview/proj01-1.webp" data-full="./assets/images/proj01-1.jpg"jpg alt="AI驱动企业IP内容生产设计" loading="lazy"></div>
-  <div class="featured-info">
-    <span class="featured-index">01</span>
-    <span class="tag">AIGC</span>
-    <h3>AI驱动企业IP内容生产设计</h3>
-    <p>基于企业IP形象，结合AI视频生成工具，构建系列化品牌宣传内容</p>
-    <span class="arrow">查看详情 →</span>
+<section class="project-showcase" id="featured-projects" aria-labelledby="projects-heading">
+  <div class="projects-heading-row">
+    <div><h2 id="projects-heading">精选项目</h2><p>从创意探索，到设计落地。</p></div>
+    <div class="projects-controls" hidden>
+      <span class="projects-position" aria-live="off" aria-atomic="true">01 / 05</span>
+      <div class="projects-arrows">
+        <button type="button" class="projects-toggle" aria-label="暂停自动轮播" aria-controls="project-track"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="projects-pause-icon" d="M9 5v14M15 5v14"/><path class="projects-play-icon" d="m9 5 10 7-10 7Z"/></svg></button>
+        <button type="button" class="projects-prev" aria-label="上一个项目" aria-controls="project-track"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg></button>
+        <button type="button" class="projects-next" aria-label="下一个项目" aria-controls="project-track"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+      </div>
+    </div>
   </div>
-</a>
-<a href="./works/ai-film-scene.html" class="featured-row reverse reveal">
-  <div class="featured-media diagonal-reveal"><img src="./assets/images/preview/proj02-1.webp" data-full="./assets/images/proj02-1.jpg"jpg alt="AI影视概念设计实验" loading="lazy"></div>
-  <div class="featured-info">
-    <span class="featured-index">02</span>
-    <span class="tag">AIGC</span>
-    <h3>AI影视概念设计实验</h3>
-    <p>利用AIGC建立科幻世界观视觉工作流</p>
-    <span class="arrow">查看详情 →</span>
+  <div class="project-track" id="project-track" role="list" tabindex="0" aria-label="精选项目，使用左右方向键浏览" aria-describedby="projects-hint">
+    <article class="project-story" role="listitem">
+      <a class="project-story-link" href="./works/ai-ip-video.html" aria-labelledby="project-story-ip-video">
+        <div class="project-story-media"><img src="./assets/images/preview/proj01-1.webp" alt="AI 驱动企业 IP 内容生成设计项目封面" width="900" height="506" loading="lazy" decoding="async" draggable="false"></div>
+        <div class="project-story-copy">
+          <div class="project-story-meta"><span>01 / 05</span><span>AI 内容 · 品牌传播</span></div>
+          <h3 id="project-story-ip-video">AI 驱动企业 IP 内容生成设计</h3>
+          <p>让企业 IP 从静态形象走进品牌故事。围绕脚本、分镜、AI 画面与后期剪辑，构建角色统一、可持续更新的系列视频内容。</p>
+          <div class="project-story-footer"><div class="project-story-tags"><span>AI 视频</span><span>品牌叙事</span></div><span class="project-story-cta">查看完整项目<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
+        </div>
+      </a>
+    </article>
+    <article class="project-story" role="listitem">
+      <a class="project-story-link" href="./works/ai-film-scene.html" aria-labelledby="project-story-film">
+        <div class="project-story-media"><img src="./assets/images/preview/proj02-1.webp" alt="AI 影视概念设计项目封面" width="900" height="506" loading="lazy" decoding="async" draggable="false"></div>
+        <div class="project-story-copy">
+          <div class="project-story-meta"><span>02 / 05</span><span>视觉探索 · 镜头叙事</span></div>
+          <h3 id="project-story-film">AI 影视概念设计</h3>
+          <p>从一个科幻设定，建立完整的视觉世界。通过场景、材质与光影的统一，探索从静态概念图到动态镜头的叙事表达。</p>
+          <div class="project-story-footer"><div class="project-story-tags"><span>世界观构建</span><span>动态影像</span></div><span class="project-story-cta">查看完整项目<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
+        </div>
+      </a>
+    </article>
+    <article class="project-story" role="listitem">
+      <a class="project-story-link" href="./works/ip-design.html" aria-labelledby="project-story-character">
+        <div class="project-story-media"><img src="./assets/images/preview/proj03-1.webp" alt="IP 全链路设计狮小昂项目封面" width="900" height="506" loading="lazy" decoding="async" draggable="false"></div>
+        <div class="project-story-copy">
+          <div class="project-story-meta"><span>03 / 05</span><span>角色设计 · 视觉体系</span></div>
+          <h3 id="project-story-character">IP 全链路设计 — 狮小昂</h3>
+          <p>不止设计一个角色，更建立一套可延展的 IP 体系。从三视图、表情到多风格形象与周边应用，保持角色鲜明的识别度。</p>
+          <div class="project-story-footer"><div class="project-story-tags"><span>角色设定</span><span>IP 延展</span></div><span class="project-story-cta">查看完整项目<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
+        </div>
+      </a>
+    </article>
+    <article class="project-story" role="listitem">
+      <a class="project-story-link" href="./works/annual-conference.html" aria-labelledby="project-story-annual">
+        <div class="project-story-media"><img src="./assets/images/preview/proj05-1.webp" alt="企业年会主视觉设计项目封面" width="900" height="506" loading="lazy" decoding="async" draggable="false"></div>
+        <div class="project-story-copy">
+          <div class="project-story-meta"><span>04 / 05</span><span>活动视觉 · 商业落地</span></div>
+          <h3 id="project-story-annual">企业年会主视觉设计</h3>
+          <p>将「AI + 全球化会展」转化为统一的活动视觉。从主舞台大屏到邀请函与现场导视，让主视觉贯穿线上线下的每个触点。</p>
+          <div class="project-story-footer"><div class="project-story-tags"><span>主视觉 KV</span><span>物料系统</span></div><span class="project-story-cta">查看完整项目<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
+        </div>
+      </a>
+    </article>
+    <article class="project-story" role="listitem">
+      <a class="project-story-link" href="./works/design-workbench.html" aria-labelledby="project-story-workbench">
+        <div class="project-story-media project-story-media-ui"><img src="./assets/images/design-operations-workbench.png" alt="个人设计运营工作台项目封面" width="1440" height="900" loading="lazy" decoding="async" draggable="false"></div>
+        <div class="project-story-copy">
+          <div class="project-story-meta"><span>05 / 05</span><span>产品探索 · 持续迭代</span></div>
+          <h3 id="project-story-workbench">个人设计运营工作台</h3>
+          <p>把零散的灵感、计划与运营数据放到同一张工作台。通过 Vibe Coding 将真实创作需求变成可使用的工具，并持续验证与优化。</p>
+          <div class="project-story-footer"><div class="project-story-tags"><span>Vibe Coding</span><span>效率工具</span></div><span class="project-story-cta">查看完整项目<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
+        </div>
+      </a>
+    </article>
   </div>
-</a>
-<a href="./works/ip-design.html" class="featured-row reveal">
-  <div class="featured-media diagonal-reveal"><img src="./assets/images/preview/proj03-1.webp" data-full="./assets/images/proj03-1.jpg"jpg alt="IP全链路设计 — 狮小昂" loading="lazy"></div>
-  <div class="featured-info">
-    <span class="featured-index">03</span>
-    <span class="tag">IP</span>
-    <h3>IP全链路设计 — 狮小昂</h3>
-    <p>以童真陪伴·成长冒险为核心，建立IP视觉体系</p>
-    <span class="arrow">查看详情 →</span>
-  </div>
-</a>
-</div>
-<div style="text-align:center;margin-top:2.5rem" class="reveal"><a href="./works.html" class="btn btn-outline">查看全部 10 个项目 →</a></div>
-</div></section><footer class="footer"><p>&copy; 2026 卓 奕 荣 · 设计连接未来，创意驱动价值</p></footer><script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <div class="projects-bottom-row"><p id="projects-hint">左右滑动，探索项目背后的设计。</p><a href="./works.html">查看全部作品<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div>
+</section>
+<footer class="footer"><p>&copy; 2026 卓 奕 荣 · 设计连接未来，创意驱动价值</p></footer><script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="./js/three-scene.js?v=2"></script>
 <script src="./js/main.js?v=8"></script>
-<script>
-document.addEventListener('DOMContentLoaded',function(){
-  const root=document.querySelector('.hero-carousel'); if(!root)return;
-  const track=root.querySelector('.hero-carousel-track'),base=[...root.querySelectorAll('.hero-slide')],dots=root.querySelector('.hero-carousel-dots');
-  const before=base.map(s=>s.cloneNode(true)),after=base.map(s=>s.cloneNode(true));
-  before.reverse().forEach(s=>track.insertBefore(s,track.firstChild)); after.forEach(s=>track.appendChild(s));
-  const slides=[...track.querySelectorAll('.hero-slide')]; let index=base.length, locked=false;
-  function paint(){const target=slides[index+2];if(!target)return;const center=root.clientWidth/2-(target.offsetLeft+target.offsetWidth/2);track.style.transform='translateX('+center+'px)';slides.forEach((s,i)=>s.classList.toggle('is-center',i===index+2));}
-  function go(next){if(locked)return;locked=true;index=next;paint();}
-  track.addEventListener('transitionend',function(){if(index>=base.length*2){track.style.transition='none';index-=base.length;paint();track.offsetHeight;track.style.transition=''}else if(index<base.length){track.style.transition='none';index+=base.length;paint();track.offsetHeight;track.style.transition=''}locked=false});
-  root.addEventListener('wheel',function(e){if(Math.abs(e.deltaY)>Math.abs(e.deltaX)){e.preventDefault();go(index+(e.deltaY>0?1:-1))}},{passive:false});
-  paint();
-});
-</script>
+<script src="./js/hero-orbit.js?v=20260919-uniform-speed"></script>
+<script src="./js/hero-typewriter.js?v=20260919"></script>
+<script src="./js/featured-projects.js?v=20260919-cover-loop"></script>
 </body>
 </html>
