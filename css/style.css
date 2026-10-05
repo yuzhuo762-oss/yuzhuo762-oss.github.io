@@ -1129,6 +1129,8 @@ body:has(.about-info) .about-info > div[style*="margin-top"] > *{opacity:1!impor
 .nav-links{margin-right:0!important}.nav-links a{font-size:.875rem!important}
 @media(max-width:767px){.navbar{padding:0 1rem!important}.nav-inner{padding:0!important}}
 .works-grid .work-card-image img{clip-path:polygon(0 0,100% 0,100% 100%,0 100%) !important;opacity:1 !important}
+.works-grid .work-card-image{display:block!important;aspect-ratio:16 / 9!important;min-height:0!important;max-height:none!important;overflow:hidden!important}
+.works-grid .work-card-image img{display:block!important;width:100%!important;height:100%!important;max-height:none!important;object-fit:cover!important;object-position:center!important}
 
 /* Portfolio case study: make the Vibe Coding specimen a light card, matching the real carousel. */
 .carousel-card-gallery .vibe-card-specimen{background:linear-gradient(145deg,#f8f9f5,#e7ece5)!important;color:#1d2921;border-color:rgba(184,255,0,.72)}.carousel-card-gallery .vibe-card-specimen::before{background:radial-gradient(circle at 50% 30%,rgba(184,255,0,.28),transparent 30%),radial-gradient(circle at 76% 78%,rgba(0,176,194,.2),transparent 36%)}.carousel-card-gallery .vibe-card-specimen span{color:#567c1f}.carousel-card-gallery .vibe-card-specimen b{color:#1c2820}.carousel-card-gallery .vibe-card-specimen i{border-color:rgba(30,100,84,.45);box-shadow:none;background:linear-gradient(180deg,rgba(255,255,255,.85) 0 22%,transparent 22%),linear-gradient(90deg,#1faabd 0 56%,rgba(30,44,36,.18) 56%);position:relative}.carousel-card-gallery .vibe-card-specimen i::before{content:'';position:absolute;top:7px;left:8px;width:5px;height:5px;border-radius:50%;background:#83b92e;box-shadow:9px 0 0 #83b92e,18px 0 0 #83b92e}.carousel-card-gallery .vibe-card-specimen figcaption{background:rgba(248,250,247,.84);color:#1c2920;border-top:1px solid rgba(28,41,32,.12)}
@@ -1145,3 +1147,44 @@ body:has(.about-info) .about-info > div[style*="margin-top"] > *{opacity:1!impor
 
 /* Portfolio feedback: align component treatments with the rest of the page. */
 .carousel-card-gallery .vibe-card-specimen figcaption{background:rgba(8,10,9,.82)!important;color:#f5f6f1!important;border-top:0}.portfolio-structure i{padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}.portfolio-state-gallery figure{margin:0 auto!important}.portfolio-state-gallery img{object-position:center top}section.project-content .project-tags .tag{background:rgba(0,212,255,.08)!important;border-color:rgba(0,212,255,.22)!important;color:#b8ff00!important}
+
+/* Shared type scale: derived from the selected-project cards, for every project detail page. */
+:root{
+  --project-section-size:clamp(32px,3vw,52px);
+  --project-title-size:clamp(20px,1.5vw,28px);
+  --project-copy-size:15px;
+  --project-meta-size:12px;
+  --project-action-size:13px;
+  --project-copy-leading:1.9;
+}
+.project-hero .section-inner{text-align:left}
+.project-hero h1{margin-bottom:20px;font-size:var(--project-section-size);font-weight:600;letter-spacing:-.02em;line-height:1.25}
+.project-hero .back-link{margin-bottom:20px;font-size:var(--project-action-size);line-height:1.6}
+.project-meta{gap:24px;margin-top:20px}.project-meta-item{gap:4px}
+.project-meta-item .label{font-size:var(--project-meta-size);line-height:1.6}
+.project-meta-item .value{font-size:var(--project-copy-size);line-height:var(--project-copy-leading)}
+.project-content{padding-top:64px;padding-bottom:80px}
+.project-content .project-section-title{margin:0 0 14px;padding-bottom:0;border-bottom:0;font-size:var(--project-title-size);font-weight:600;letter-spacing:-.015em;line-height:1.5}
+.project-content .project-body-text{max-width:none;margin:0 0 32px;color:var(--text2);font-size:var(--project-copy-size);line-height:var(--project-copy-leading)}
+.project-pdf-section{margin-top:48px}
+.project-pdf-strip{display:grid;gap:8px;overflow:hidden;border:1px solid var(--border);border-radius:var(--rm);background:#070a09}
+.project-pdf-strip .pdf-page-frame{width:100%;overflow:hidden;background:#070a09}
+.project-pdf-strip .pdf-page-frame canvas{display:block;width:100%;height:auto}
+.project-pdf-strip .pdf-page-error,.project-pdf-strip .pdf-render-status{display:grid;min-height:180px;place-items:center;margin:0;padding:2rem;color:var(--text2);text-align:center}
+.project-video-section{margin-top:48px}
+.project-video-wrap{overflow:hidden;border:1px solid var(--border);border-radius:var(--rm);background:#000}
+.project-video{display:block;width:100%;aspect-ratio:16 / 9;height:auto;max-height:78vh;object-fit:contain;background:#000}
+.project-content .project-tags{gap:8px;margin:20px 0 28px}
+.project-content .project-tags .tag{padding:3px 10px;font-size:var(--project-meta-size);line-height:1.6}
+.project-nav{margin-top:48px;padding-top:20px}.project-nav a{font-size:var(--project-action-size);line-height:1.6}
+.footer{font-size:var(--project-action-size);line-height:1.6}
+@media(max-width:767px){.project-hero h1{font-size:32px;line-height:1.25}.project-meta{gap:16px}.project-content{padding-top:48px;padding-bottom:64px}.project-content .project-body-text{font-size:14px}.project-pdf-section,.project-video-section{margin-top:32px}}
+
+/* Shared content edge: matches the selected-project gallery at every viewport. */
+:root{--content-gutter:clamp(24px,5vw,96px)}
+.section{padding-inline:var(--content-gutter)}
+.section-inner{max-width:none;margin-inline:0}
+.project-hero{padding-inline:var(--content-gutter)}
+.project-content{padding-inline:var(--content-gutter)}
+.footer{padding-inline:var(--content-gutter)}
+@media(max-width:767px){:root{--content-gutter:20px}.section,.project-hero,.project-content,.footer{padding-inline:var(--content-gutter)}}

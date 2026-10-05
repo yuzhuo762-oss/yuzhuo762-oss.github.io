@@ -10,15 +10,16 @@
   const next = section.querySelector('.projects-next');
   const toggle = section.querySelector('.projects-toggle');
   const position = section.querySelector('.projects-position');
-  const hint = section.querySelector('#projects-hint');
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
-  const speed = 44;
+  const forceMotion = new URLSearchParams(location.search).get('motion') === 'full';
+  const speed = 120;
   let cycle = 0, step = 0, offset = 0, renderedOffset = 0;
   let frame = 0, lastTime = 0, resumeTimer, holdUntil = 0, tween;
   let visible = false, hovered = false, focused = false, paused = false;
   let touching = false, drag, suppressClick = false;
 
   const modulo = (value, length) => ((value % length) + length) % length;
+  const shouldReduceMotion = () => reducedMotion.matches && !forceMotion;
 
   function cloneGroup() {
     return cards.map(card => {
@@ -47,11 +48,11 @@
     renderedOffset = track.scrollLeft;
     const active = modulo(Math.round((offset - cycle) / step), cards.length);
     const label = `${String(active + 1).padStart(2, '0')} / ${String(cards.length).padStart(2, '0')}`;
-    if (position.textContent !== label) position.textContent = label;
+    if (position && position.textContent !== label) position.textContent = label;
   }
 
   function canPlay() {
-    return visible && !document.hidden && !reducedMotion.matches && !paused &&
+    return visible && !document.hidden && !shouldReduceMotion() && !paused &&
       !hovered && !focused && !drag && !touching && performance.now() >= holdUntil;
   }
 
@@ -96,7 +97,7 @@
   function moveTo(index, instant = false) {
     hold();
     const target = cycle + modulo(index, cards.length) * step;
-    if (reducedMotion.matches || instant) {
+    if (shouldReduceMotion() || instant) {
       tween = undefined;
       writeOffset(target);
     } else {
@@ -108,7 +109,7 @@
   function moveBy(direction) {
     hold();
     const target = offset + direction * step;
-    if (reducedMotion.matches) {
+    if (shouldReduceMotion()) {
       tween = undefined;
       writeOffset(target);
     } else {
@@ -117,9 +118,9 @@
     }
   }
 
-  prev.addEventListener('click', () => moveBy(-1));
-  next.addEventListener('click', () => moveBy(1));
-  toggle.addEventListener('click', () => {
+  prev?.addEventListener('click', () => moveBy(-1));
+  next?.addEventListener('click', () => moveBy(1));
+  toggle?.addEventListener('click', () => {
     paused = !paused;
     toggle.classList.toggle('is-paused', paused);
     toggle.setAttribute('aria-label', paused ? '开始自动轮播' : '暂停自动轮播');
@@ -204,11 +205,9 @@
   }, true);
 
   function motionPreference() {
-    toggle.hidden = reducedMotion.matches;
-    position.setAttribute('aria-live', reducedMotion.matches || paused ? 'polite' : 'off');
-    hint.textContent = reducedMotion.matches ? '左右滑动，探索项目背后的设计。' :
-      '自动向左轮播 · 悬停暂停，也可左右滑动浏览';
-    if (reducedMotion.matches) tween = undefined;
+    if (toggle) toggle.hidden = shouldReduceMotion();
+    if (position) position.setAttribute('aria-live', shouldReduceMotion() || paused ? 'polite' : 'off');
+    if (shouldReduceMotion()) tween = undefined;
     wake();
   }
 
@@ -216,7 +215,6 @@
   new ResizeObserver(layout).observe(track);
   document.addEventListener('visibilitychange', wake);
   reducedMotion.addEventListener('change', motionPreference);
-  section.querySelector('.projects-controls').hidden = false;
   layout();
   motionPreference();
 })();

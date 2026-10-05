@@ -3,13 +3,15 @@
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>卓 奕 荣 | AIGC 视觉设计作品集</title>
 <meta name="description" content="卓 奕 荣 - AIGC视觉设计师作品集">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./css/style.css?v=20260822-final"><link rel="stylesheet" href="./css/home-reference.css?v=20260918-orbit-cards">
+<link rel="stylesheet" href="./css/style.css?v=20261005-card-ratio"><link rel="stylesheet" href="./css/home-reference.css?v=20261005-starfield">
 <noscript><style>.reveal,.stagger-children>*,.grow-in,.diagonal-reveal img{opacity:1!important;transform:none!important;clip-path:polygon(0 0,100% 0,100% 100%,0 100%)!important}</style></noscript>
-<link rel="stylesheet" href="./css/hero-orbit.css?v=20260919-typewriter">
-<link rel="stylesheet" href="./css/featured-projects.css?v=20260919-cover-loop">
+<link rel="stylesheet" href="./css/hero-orbit.css?v=20261005-hero-fade">
+<link rel="stylesheet" href="./css/featured-projects.css?v=20261005-hero-fade">
+<link rel="stylesheet" href="./css/one-page.css?v=20261005-typography-system">
 
 </head><body class="home-page">
 <!--
@@ -38,44 +40,36 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <div class="intro-glitch-bar bar-1"></div>
   <div class="intro-glitch-bar bar-2"></div>
   <div class="intro-glitch-bar bar-3"></div>
-</div><nav class="navbar"><div class="nav-inner"><a href="./" class="nav-logo">Z·Y·R</a><button class="nav-hamburger" aria-label="菜单"><span></span><span></span><span></span></button><div class="nav-links"><a href="./">首页</a><a href="./works.html">作品</a><a href="./about.html">关于我</a></div></div></nav><section class="hero">
+</div><nav class="navbar" aria-label="页面导航"><div class="nav-inner"><a href="#home" class="nav-logo" aria-label="返回首页">Z·Y·R</a><button class="nav-hamburger" aria-label="打开菜单" aria-expanded="false"><span></span><span></span><span></span></button><div class="nav-links"><a href="#home" class="active">首页</a><a href="#works">作品</a><a href="#about">关于我</a><a href="#contact">联系</a></div></div></nav><main><section class="hero" id="home">
+<video class="hero-starfield-video" autoplay muted loop playsinline preload="auto" aria-hidden="true"><source src="./assets/videos/hero-starfield.webm" type="video/webm"></video>
 <canvas id="three-canvas"></canvas>
   <div class="hero-cyber-grid"></div>
 <div class="hero-orbit" aria-label="精选作品">
-  <a class="orbit-work" href="./works/ai-ip-video.html"><img src="./assets/images/preview/proj01-1.webp" alt="AI驱动企业IP内容生成设计"></a>
-  <a class="orbit-work" href="./works/ai-film-scene.html"><img src="./assets/images/preview/proj02-1.webp" alt="AI影视概念设计"></a>
-  <a class="orbit-work" href="./works/ip-design.html"><img src="./assets/images/preview/proj03-1.webp" alt="IP全链路设计"></a>
-  <a class="orbit-work" href="./works/annual-conference.html"><img src="./assets/images/preview/proj05-1.webp" alt="企业年会主视觉设计"></a>
-  <a class="orbit-work" href="./works/pet-logo.html"><img src="./assets/images/preview/proj06-1.webp" alt="宠物LOGO设计"></a>
-  <a class="orbit-work" href="./works/anniversary-kv-design.html"><img src="./assets/images/preview/proj08-1.webp" alt="企业周年庆主视觉设计"></a>
-  <a class="orbit-work" href="./works/poster-qixi.html"><img src="./assets/images/preview/qixi_01.webp" alt="七夕主视觉与海报设计"></a>
-  <a class="orbit-work" href="./works/poster-summer.html"><img src="./assets/images/preview/summer_02.webp" alt="清凉一夏KV设计"></a>
-  <a class="orbit-work" href="./works/poster-art.html"><img src="./assets/images/preview/art_thumb.webp" alt="插画设计——穆夏风格"></a>
-  <a class="orbit-work" href="./works/poster-other.html"><img src="./assets/images/preview/other_02.webp" alt="户外与展会物料"></a>
+  <a class="orbit-work" href="./works/ai-ip-video.html"><video muted loop playsinline preload="metadata" poster="./assets/images/preview/proj01-1.webp" aria-label="AI驱动企业IP内容生成设计视频封面"><source src="./assets/orbit-videos/ai-ip.mp4" type="video/mp4"></video></a>
+  <a class="orbit-work" href="./works/ai-film-scene.html"><video muted loop playsinline preload="metadata" poster="./assets/images/preview/proj02-1.webp" aria-label="AI影视概念设计视频封面"><source src="./assets/orbit-videos/ai-film.mp4" type="video/mp4"></video></a>
+  <a class="orbit-work" href="./works/ip-design.html"><video muted loop playsinline preload="metadata" poster="./assets/images/preview/proj03-1.webp" aria-label="IP全链路设计视频封面"><source src="./assets/orbit-videos/ip-design.mp4" type="video/mp4"></video></a>
+  <a class="orbit-work" href="./works/annual-conference.html"><video muted loop playsinline preload="metadata" poster="./assets/images/preview/proj05-1.webp" aria-label="企业年会主视觉设计视频封面"><source src="./assets/orbit-videos/annual-conference.mp4" type="video/mp4"></video></a>
+  <a class="orbit-work" href="./works/pet-logo.html"><video muted loop playsinline preload="metadata" poster="./assets/images/preview/proj06-1.webp" aria-label="宠物LOGO设计视频封面"><source src="./assets/orbit-videos/pet-logo.mp4" type="video/mp4"></video></a>
+  <a class="orbit-work" href="./works/anniversary-kv-design.html"><video muted loop playsinline preload="metadata" poster="./assets/images/preview/proj08-1.webp" aria-label="企业周年庆主视觉设计视频封面"><source src="./assets/orbit-videos/anniversary-kv.mp4" type="video/mp4"></video></a>
+  <a class="orbit-work" href="./works/poster-qixi.html"><video muted loop playsinline preload="metadata" poster="./assets/images/preview/qixi_01.webp" aria-label="七夕主视觉与海报设计视频封面"><source src="./assets/orbit-videos/poster-qixi.mp4" type="video/mp4"></video></a>
+  <a class="orbit-work" href="./works/poster-summer.html"><video muted loop playsinline preload="metadata" poster="./assets/images/preview/summer_02.webp" aria-label="清凉一夏KV设计视频封面"><source src="./assets/orbit-videos/poster-summer.mp4" type="video/mp4"></video></a>
+  <a class="orbit-work" href="./works/poster-art.html"><video muted loop playsinline preload="metadata" poster="./assets/images/preview/art_thumb.webp" aria-label="穆夏风格插画设计视频封面"><source src="./assets/orbit-videos/poster-art.mp4" type="video/mp4"></video></a>
+  <a class="orbit-work" href="./works/poster-other.html"><video muted loop playsinline preload="metadata" poster="./assets/images/preview/other_02.webp" aria-label="户外与展会物料视频封面"><source src="./assets/orbit-videos/poster-other.mp4" type="video/mp4"></video></a>
   <a class="orbit-work" href="./works/design-workbench.html"><img src="./assets/images/design-operations-workbench.png" alt="个人设计运营工作台"></a>
-  <a class="orbit-work" href="./works.html?filter=建筑"><img src="./assets/images/carousel/architecture.png" alt="建筑设计"></a>
+  <a class="orbit-work" href="./works/architecture.html"><video muted loop playsinline preload="metadata" poster="./assets/images/carousel/architecture.png" aria-label="建筑设计视频封面"><source src="./assets/projects/architecture/video-showcase-web.mp4" type="video/mp4"></video></a>
 </div>
 <div class="hero-content hero-statement">
 <h1 class="hero-name"><span>AIGC VISUAL</span><span>DESIGN</span></h1>
 <p class="hero-tagline">卓奕荣个人作品展示网站</p>
 <p class="hero-subtitle">设计连接未来</p>
-<div class="hero-actions"><a href="./works.html" class="btn btn-primary">浏览作品 →</a><a href="./about.html" class="btn btn-outline">关于我</a></div>
 </div>
 <div class="hero-scroll"><span>SCROLL</span><div class="scroll-line"></div></div>
 </section>
 <section class="project-showcase" id="featured-projects" aria-labelledby="projects-heading">
   <div class="projects-heading-row">
     <div><h2 id="projects-heading">精选项目</h2><p>从创意探索，到设计落地。</p></div>
-    <div class="projects-controls" hidden>
-      <span class="projects-position" aria-live="off" aria-atomic="true">01 / 05</span>
-      <div class="projects-arrows">
-        <button type="button" class="projects-toggle" aria-label="暂停自动轮播" aria-controls="project-track"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="projects-pause-icon" d="M9 5v14M15 5v14"/><path class="projects-play-icon" d="m9 5 10 7-10 7Z"/></svg></button>
-        <button type="button" class="projects-prev" aria-label="上一个项目" aria-controls="project-track"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg></button>
-        <button type="button" class="projects-next" aria-label="下一个项目" aria-controls="project-track"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
-      </div>
-    </div>
   </div>
-  <div class="project-track" id="project-track" role="list" tabindex="0" aria-label="精选项目，使用左右方向键浏览" aria-describedby="projects-hint">
+  <div class="project-track" id="project-track" role="list" tabindex="0" aria-label="精选项目，使用左右方向键浏览">
     <article class="project-story" role="listitem">
       <a class="project-story-link" href="./works/ai-ip-video.html" aria-labelledby="project-story-ip-video">
         <div class="project-story-media"><img src="./assets/images/preview/proj01-1.webp" alt="AI 驱动企业 IP 内容生成设计项目封面" width="900" height="506" loading="lazy" decoding="async" draggable="false"></div>
@@ -132,13 +126,39 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       </a>
     </article>
   </div>
-  <div class="projects-bottom-row"><p id="projects-hint">左右滑动，探索项目背后的设计。</p><a href="./works.html">查看全部作品<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div>
+  <div class="projects-bottom-row projects-bottom-row-solo"><a href="#works">查看全部作品<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div>
 </section>
-<footer class="footer"><p>&copy; 2026 卓 奕 荣 · 设计连接未来，创意驱动价值</p></footer><script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="./js/three-scene.js?v=2"></script>
+<section class="one-page-works section" id="works" aria-labelledby="works-heading">
+  <div class="section-inner">
+    <header class="one-page-heading reveal"><h2 id="works-heading">全部作品</h2><p>AI 驱动 · 视觉设计 · 品牌传播 · IP 创作</p></header>
+    <div class="project-tags filter-group one-page-filter" aria-label="作品分类筛选">
+      <button class="tag tag-cyan filter-btn active" data-filter="all" type="button">全部</button><button class="tag tag-cyan filter-btn" data-filter="AIGC" type="button">AIGC</button><button class="tag filter-btn" data-filter="品牌" type="button">品牌设计</button><button class="tag filter-btn" data-filter="IP" type="button">IP设计</button><button class="tag filter-btn" data-filter="海报" type="button">海报设计</button><button class="tag filter-btn" data-filter="UI" type="button">UI设计</button><button class="tag filter-btn" data-filter="建筑" type="button">建筑设计</button><button class="tag tag-cyan filter-btn" data-filter="Vibe Coding" type="button">Vibe Coding</button>
+    </div>
+    <div class="works-grid stagger-children">
+      <a href="./works/architecture.html" class="work-card" data-category="建筑"><div class="work-card-image diagonal-reveal"><img src="./assets/projects/architecture/video-cover.jpg" alt="办公空间建筑设计案例" loading="lazy"></div><div class="work-card-body"><span class="tag">建筑设计</span><h3>办公空间案例分析</h3><p>围绕办公空间展开的建筑设计案例分析与展示。</p><span class="arrow">查看项目 →</span></div></a>
+      <a href="./works/design-workbench.html" class="work-card workbench-card" data-category="Vibe Coding|UI"><div class="work-card-image diagonal-reveal"><img src="./assets/images/design-operations-workbench.png" alt="个人设计运营工作台主界面" loading="lazy"></div><div class="work-card-body"><span class="tag tag-cyan">Vibe Coding · UI设计</span><h3>个人设计运营工作台</h3><p>用 Vibe Coding 搭建的个人创作中枢，持续优化中。</p><span class="arrow">查看项目 →</span></div></a>
+      <a href="./works/portfolio-website.html" class="work-card" data-category="Vibe Coding"><div class="work-card-image diagonal-reveal"><img src="./assets/images/portfolio-website-cover.png" alt="个人设计作品集网站首页" loading="lazy"></div><div class="work-card-body"><span class="tag tag-cyan">Vibe Coding · 网站设计</span><h3>个人设计作品集网站</h3><p>用 Vibe Coding 搭建的个人作品展示与持续更新平台。</p><span class="arrow">查看项目 →</span></div></a>
+      <a href="./works/ai-ip-video.html" class="work-card" data-category="AIGC"><div class="work-card-image diagonal-reveal"><img src="./assets/images/preview/proj01-1.webp" alt="AI驱动企业IP内容生产设计" loading="lazy"></div><div class="work-card-body"><span class="tag">AIGC</span><h3>AI驱动企业IP内容生产设计</h3><p>基于企业IP形象，结合AI视频生成工具，构建系列化品牌宣传内容。</p><span class="arrow">查看详情 →</span></div></a>
+      <a href="./works/ai-film-scene.html" class="work-card" data-category="AIGC"><div class="work-card-image diagonal-reveal"><img src="./assets/images/preview/proj02-1.webp" alt="AI影视概念设计实验" loading="lazy"></div><div class="work-card-body"><span class="tag">AIGC</span><h3>AI影视概念设计实验</h3><p>利用 AIGC 建立科幻世界观视觉工作流。</p><span class="arrow">查看详情 →</span></div></a>
+      <a href="./works/ip-design.html" class="work-card" data-category="IP|AIGC"><div class="work-card-image diagonal-reveal"><img src="./assets/images/preview/proj03-1.webp" alt="IP全链路设计狮小昂" loading="lazy"></div><div class="work-card-body"><span class="tag">IP</span><h3>IP全链路设计 — 狮小昂</h3><p>以童真陪伴、成长冒险为核心，建立IP视觉体系。</p><span class="arrow">查看详情 →</span></div></a>
+      <a href="./works/anniversary-kv.html" class="work-card" data-category="AIGC"><div class="work-card-image diagonal-reveal"><img src="./assets/images/preview/proj04-1.webp" alt="AIGC周年庆KV设计" loading="lazy"></div><div class="work-card-body"><span class="tag">AIGC</span><h3>AIGC周年庆KV设计</h3><p>企业十五周年庆典主视觉设计。</p><span class="arrow">查看详情 →</span></div></a>
+      <a href="./works/annual-conference.html" class="work-card" data-category="品牌"><div class="work-card-image diagonal-reveal"><img src="./assets/images/preview/proj05-1.webp" alt="企业年会主视觉KV设计" loading="lazy"></div><div class="work-card-body"><span class="tag">品牌</span><h3>企业年会主视觉KV设计</h3><p>AI慧展会展年会视觉系统设计。</p><span class="arrow">查看详情 →</span></div></a>
+      <a href="./works/pet-logo.html" class="work-card" data-category="品牌"><div class="work-card-image diagonal-reveal"><img src="./assets/images/preview/proj06-1.webp" alt="宠物LOGO设计 GPE" loading="lazy"></div><div class="work-card-body"><span class="tag">品牌</span><h3>宠物LOGO设计 — GPE</h3><p>GPE全球宠物用品展品牌标识设计。</p><span class="arrow">查看详情 →</span></div></a>
+      <a href="./works/poster.html" class="work-card" data-category="海报"><div class="work-card-image diagonal-reveal"><img src="./assets/images/preview/qixi_01.webp" alt="海报设计" loading="lazy"></div><div class="work-card-body"><span class="tag">海报</span><h3>海报设计</h3><p>节气海报、节日KV、插画、品牌传播与展会物料。</p><span class="arrow">查看详情 →</span></div></a>
+      <a href="./works/anniversary-kv-design.html" class="work-card" data-category="品牌"><div class="work-card-image diagonal-reveal"><img src="./assets/images/preview/proj08-1.webp" alt="企业周年庆主视觉KV设计" loading="lazy"></div><div class="work-card-body"><span class="tag">品牌</span><h3>企业周年庆主视觉KV设计</h3><p>企业周年庆典主视觉视觉系统设计。</p><span class="arrow">查看详情 →</span></div></a>
+      <a href="./works/fridge-magnet.html" class="work-card" data-category="AIGC"><div class="work-card-image diagonal-reveal"><img src="./assets/images/preview/fridge-magnet-cover.png" alt="冰箱贴设计" loading="lazy"></div><div class="work-card-body"><span class="tag">文创</span><h3>冰箱贴设计</h3><p>IP形象衍生文创产品设计。</p><span class="arrow">查看详情 →</span></div></a>
+      <a href="./works/tech-icons.html" class="work-card" data-category="AIGC"><div class="work-card-image diagonal-reveal"><img src="./assets/images/preview/tech_cover.webp" alt="科技风格icon图标" loading="lazy"></div><div class="work-card-body"><span class="tag">设计</span><h3>科技风格icon图标</h3><p>科技风格 icon 图标视觉符号体系。</p><span class="arrow">查看详情 →</span></div></a>
+    </div>
+  </div>
+</section>
+<section class="one-page-about section" id="about" aria-labelledby="about-heading"><div class="section-inner"><header class="one-page-heading reveal"><h2 id="about-heading">关于我</h2><p>AIGC视觉设计师 · 创意与技术的探索者</p></header><div class="about-layout"><div class="about-info reveal"><h3>卓奕荣</h3><p class="title-role">AIGC Visual Designer</p><p class="bio">专注于 AI 驱动视觉设计与品牌传播，善于将 AIGC 技术融入设计工作流，提升视觉生产效率与创意表现力。</p><p class="bio">拥有互联网与会展行业的设计实习经验，服务过上市公司与行业领先企业，具备从视觉定义到商业落地的完整项目能力。</p><div class="skills-section"><h3>专业技能</h3><h4 class="skills-sub">设计能力</h4><div class="skills-grid"><span class="skill-tag">AIGC 视觉创作</span><span class="skill-tag">AI 动态内容设计</span><span class="skill-tag">品牌视觉设计</span><span class="skill-tag">KV / 海报设计</span><span class="skill-tag">IP 视觉设计</span><span class="skill-tag">视觉创意设计</span></div><h4 class="skills-sub">掌握工具</h4><div class="skills-grid"><span class="skill-tag">Photoshop</span><span class="skill-tag">Illustrator</span><span class="skill-tag">Seedance 2.5</span><span class="skill-tag">Image 2</span><span class="skill-tag">Comfy UI</span><span class="skill-tag">剪映</span></div></div></div><div class="reveal"><h3 class="experience-title">工作经历</h3><div class="timeline"><div class="timeline-item"><span class="date">2025.12 — 2026.03 &amp; 2026.9 — 至今</span><p class="company">上海金桥信息股份有限公司</p><p class="role">市场部 · 视觉设计</p><p class="desc">企业IP短片设计、IP形象衍生及节日宣发物料设计。</p></div><div class="timeline-item"><span class="date">2025.04 — 2025.09</span><p class="company">上海融航信息技术股份有限公司</p><p class="role">市场部 · 平面设计</p><p class="desc">企业周年庆主视觉KV与活动传播物料设计。</p></div><div class="timeline-item"><span class="date">2024.09 — 2025.02</span><p class="company">浙江米奥兰特商务会展股份有限公司</p><p class="role">市场部 · 会展平面设计</p><p class="desc">AI慧展会展年会视觉系统及展会视觉设计。</p></div></div><div class="about-stats one-page-stats"><span><b>10+</b> 企业IP视频</span><span><b>2</b> 上市公司项目经验</span><span><b>7</b> 项目类别</span></div></div></div></div></section>
+<section class="one-page-contact section" id="contact" aria-labelledby="contact-heading"><div class="section-inner"><div class="contact-panel reveal"><div><h2 id="contact-heading">一起合作</h2><p>如果你对我的作品感兴趣，或有合作机会，欢迎随时联系我。</p></div><a class="btn btn-primary" href="mailto:2260525958@qq.com">发送邮件</a></div></div></section>
+</main>
+<footer class="footer"><p>&copy; 2026 卓 奕 荣 · 设计连接未来，创意驱动价值</p></footer>
 <script src="./js/main.js?v=8"></script>
-<script src="./js/hero-orbit.js?v=20260919-uniform-speed"></script>
+<script src="./js/hero-orbit.js?v=20261005-orbit-videos"></script>
 <script src="./js/hero-typewriter.js?v=20260919"></script>
-<script src="./js/featured-projects.js?v=20260919-cover-loop"></script>
+<script src="./js/featured-projects.js?v=20261004-faster-scroll"></script>
+<script src="./js/one-page-nav.js?v=20260924-preview"></script>
 </body>
 </html>

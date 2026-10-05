@@ -5,12 +5,15 @@
   min-height:640px!important;
   padding:0!important;
   isolation:isolate;
-  overflow:hidden!important;
+  overflow:visible!important;
+  --orbit-shift-y:-36px;
 }
+.hero-starfield-video{position:absolute!important;inset:0!important;z-index:0!important;display:block!important;width:100%!important;height:calc(100% + clamp(200px,25vw,360px))!important;object-fit:cover!important;pointer-events:none;background:#080a09}
+.home-page #three-canvas{display:none!important;}
 .home-page .hero-statement {
   position:absolute!important;
   left:50%!important;
-  top:50svh!important;
+  top:46svh!important;
   width:min(80%,960px)!important;
   max-width:960px!important;
   margin:0!important;
@@ -20,6 +23,7 @@
 .home-page .hero-name {font-size:clamp(2.5rem,5.2vw,4.7rem)!important;}
 .home-page .hero-statement .hero-name {line-height:1.15!important;}
 .home-page .hero-statement .hero-name span + span {margin-top:.12em;}
+.home-page .hero-statement .hero-tagline {margin-top:.85rem!important;}
 .home-page .hero-orbit {position:absolute;inset:0;animation:none!important;transform:none!important;z-index:2!important;}
 .home-page .orbit-work {
   left:0!important;top:0!important;right:auto!important;bottom:auto!important;
@@ -32,7 +36,7 @@
   transition:border-color .2s,box-shadow .2s!important;
   will-change:transform,opacity;
 }
-.home-page .orbit-work img {width:100%!important;height:100%!important;aspect-ratio:16/9!important;object-fit:cover!important;}
+.home-page .orbit-work img,.home-page .orbit-work video {display:block;width:100%!important;height:100%!important;aspect-ratio:16/9!important;object-fit:cover!important;}
 .hero-type-line {position:relative;}
 .hero-type-line .hero-type-source {opacity:0;}
 .hero-typed {
@@ -54,7 +58,7 @@
   background:currentColor;
 }
 @media(max-width:767px){
-  .home-page .hero{min-height:580px!important;}
+  .home-page .hero{min-height:580px!important;--orbit-shift-y:-24px;}
   .home-page .hero-statement{width:88%!important;}
   .home-page .hero-name{font-size:clamp(1.8rem,8vw,3.2rem)!important;}
   .home-page .orbit-work{width:34vw!important;}

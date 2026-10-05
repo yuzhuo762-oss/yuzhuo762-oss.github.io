@@ -3,7 +3,9 @@
   if (!hero) return;
   const cards = [...hero.querySelectorAll('.orbit-work')];
   if (!cards.length) return;
+  const videos = cards.map((card) => card.querySelector('video'));
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  const forceMotion = new URLSearchParams(location.search).get('motion') === 'full';
   const turn = Math.PI * 2;
   const cycleSeconds = 40;
   const pathSteps = 2048;
@@ -31,7 +33,8 @@
     const upperExtent = textCenter * 2 * .28;
     const foregroundHalfHeight = cardHeight * 1.75 / 2;
     const lowerExtent = Math.max(upperExtent, statement.offsetHeight / 2 + foregroundHalfHeight + 40);
-    centerY = textCenter + (lowerExtent - upperExtent) / 2;
+    const orbitShiftY = parseFloat(getComputedStyle(hero).getPropertyValue('--orbit-shift-y')) || 0;
+    centerY = textCenter + (lowerExtent - upperExtent) / 2 + orbitShiftY;
     radiusY = (lowerExtent + upperExtent) / 2;
     hero.style.setProperty('--orbit-stage-height', `${Math.max(textCenter * 2, textCenter + lowerExtent + foregroundHalfHeight + 24)}px`);
 
@@ -92,7 +95,7 @@
     const elapsed = previousTime === undefined ? 0 : (time - previousTime) / 1000;
     previousTime = time;
     // Positive angles move clockwise in screen coordinates (positive y points down).
-    if (!reducedMotion.matches && !document.hidden && visible) {
+    if ((forceMotion || !reducedMotion.matches) && !document.hidden && visible) {
       progress = (progress + elapsed / cycleSeconds) % 1;
     }
     cards.forEach((card, index) => {
@@ -105,6 +108,16 @@
       // Keep the distant upper cards small; emphasize the lower foreground arc.
       card.style.setProperty('--card-scale', (.55 + .8 * depth + .4 * Math.max(0, vertical)).toFixed(4));
       card.style.setProperty('--card-opacity', (.25 + .75 * depth).toFixed(4));
+
+      const video = videos[index];
+      const shouldPlay = (forceMotion || !reducedMotion.matches) && visible && !document.hidden && depth > .58;
+      if (video && shouldPlay && video.dataset.orbitPlaying !== 'true') {
+        video.dataset.orbitPlaying = 'true';
+        video.play().catch(() => { delete video.dataset.orbitPlaying; });
+      } else if (video && !shouldPlay && video.dataset.orbitPlaying === 'true') {
+        video.pause();
+        delete video.dataset.orbitPlaying;
+      }
     });
     requestAnimationFrame(render);
   }

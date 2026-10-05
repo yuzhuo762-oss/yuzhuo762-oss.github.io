@@ -1,0 +1,88 @@
+.architecture-hero::before {
+  background: radial-gradient(ellipse at 74% 10%, rgba(184, 255, 0, .12), transparent 46%), radial-gradient(ellipse at 20% 0%, rgba(0, 212, 255, .10), transparent 42%);
+}
+
+.architecture-project-content {
+  padding-top: 3rem;
+}
+
+.architecture-copy-section {
+  max-width: none;
+}
+
+.architecture-copy-section .project-body-text {
+  max-width: none;
+}
+
+.architecture-copy-section + .architecture-copy-section,
+.architecture-copy-section + .architecture-media-section {
+  margin-top: 3rem;
+}
+
+.architecture-copy-section .project-body-text:last-child {
+  margin-bottom: 0;
+}
+
+.architecture-media-section + .architecture-media-section {
+  margin-top: 4.5rem;
+}
+
+.architecture-video-wrap,
+.architecture-pdf-strip {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--rm);
+  background: #070a09;
+}
+
+.architecture-video-wrap video {
+  display: block;
+  width: 100%;
+  max-height: 78vh;
+  background: #000;
+}
+
+.architecture-pdf-strip {
+  display: grid;
+  gap: 8px;
+  background: #070a09;
+}
+
+.pdf-page-frame {
+  width: 100%;
+  overflow: hidden;
+  background: #070a09;
+}
+
+.pdf-page-frame canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.pdf-page-error,
+.pdf-render-status {
+  display: grid;
+  min-height: 180px;
+  place-items: center;
+  margin: 0;
+  padding: 2rem;
+  color: var(--text2);
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .architecture-project-content {
+    padding-top: 2rem;
+  }
+
+  .architecture-copy-section + .architecture-copy-section,
+  .architecture-copy-section + .architecture-media-section {
+    margin-top: 2.5rem;
+  }
+
+  .architecture-media-section + .architecture-media-section {
+    margin-top: 3rem;
+  }
+
+}
